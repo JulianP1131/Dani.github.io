@@ -81,10 +81,19 @@
         }
 
         .corazon {
-            color: black;
-            background: none;
-            -webkit-background-clip: unset;
-            text-shadow: none;
+            font-size: 1.5em;                /* un poquito más grande que el texto */
+            color: black;                    /* mantiene el color negro */
+            background: none;                /* elimina degradados */
+            -webkit-background-clip: unset;  /* asegura que no herede background-clip */
+            text-shadow: none;               /* sin brillos */
+            animation: latido 1.5s cubic-bezier(0.25, 0.1, 0.25, 1) infinite;
+        }
+        
+        @keyframes latido {
+            0%, 100% { transform: scale(1); }
+            25% { transform: scale(2); text-shadow: 0 0 10px rgba(255,255,255,0.3); }
+            50%      { transform: scale(0.95); }
+            75%      { transform: scale(1.15); }
         }
 
         /* Fade In */
@@ -2321,4 +2330,5 @@
 </body>
 
 </html>
+
 
